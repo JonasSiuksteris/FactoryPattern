@@ -4,12 +4,12 @@ namespace FactoryPattern.Factories
 {
     public class ShapeFactory : AbstractFactory
     {
-        public override IShape GetShape(string shapeType)
+        public override IShape GetShape(ShapesEnum shapeType)
         {
             return shapeType switch
             {
-                "rectangle" => (IShape) new Rectangle(),
-                "square" => new Square(),
+                ShapesEnum.Rectangle => new Rectangle(),
+                ShapesEnum.Square => new Square(),
                 _ => null
             };
         }
